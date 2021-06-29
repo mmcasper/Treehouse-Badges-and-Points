@@ -38,6 +38,10 @@ function getProfile(username) {
 //getProfile('chalkers');
 //getProfile('meghancasper');
 //condense repetitive code into forEach loop
-const users = ['chalkers', 'meghancasper'];
+//const users = ['chalkers', 'meghancasper'];
+
+//use process to get object and slice out first 2 elements in array to get only relevant indices of the array returned
+//just add username after calling app.js in terminal. will printMessage for each username
+const users = process.argv.slice(2);
 users.forEach(getProfile);
 
