@@ -34,5 +34,10 @@ function getProfile(username) {
     });
 });
 }
-getProfile('chalkers');
-getProfile('meghancasper');
+
+//getProfile('chalkers');
+//getProfile('meghancasper');
+//condense repetitive code into forEach loop
+const users = ['chalkers', 'meghancasper'];
+users.forEach(getProfile);
+
