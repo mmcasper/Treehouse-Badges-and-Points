@@ -21,10 +21,15 @@ function getProfile(username) {
         });
 
         response.on('end', () => {
-            //Parse the data
-            const profile = JSON.parse(body);
-            //Print the data
-            printMessage(username, profile.badges.length, profile.points.JavaScript);    });
+            try{
+                //Parse the data
+                const profile = JSON.parse(body);
+                //Print the data
+                printMessage(username, profile.badges.length, profile.points.JavaScript);   
+            } catch (error) {
+                console.error(error.message);
+            }
+            });
         });
         //check for error on https request (ex: misspelled url)
         request.on('error', error => console.error(`Problem with request: ${errror.message}`));
